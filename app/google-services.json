@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "312359367412",
+    "project_id": "dailycareplus-5b84c",
+    "storage_bucket": "dailycareplus-5b84c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312359367412:android:5a2c1dcd8873fceeee64a1",
+        "android_client_info": {
+          "package_name": "com.example.dailycareplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312359367412-4utcketvtj0ucbgc26t38u81bibht2b2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dailycareplus",
+            "certificate_hash": "c4622701d466fb467be5318bdcc328407971de87"
+          }
+        },
+        {
+          "client_id": "312359367412-qse2jgt1jguufpqietucbk8in7sbra02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKrlgtDExvfC12xNs4sKXfJrCxNXo0NOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312359367412-qse2jgt1jguufpqietucbk8in7sbra02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
