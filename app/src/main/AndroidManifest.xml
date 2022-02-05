@@ -9,11 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dailycareplus">
-        <activity android:name=".LogoActivity"
-            android:theme="@style/LogoTheme"
-            android:exported="true">
+        <activity
+            android:name=".DPassMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LogoActivity"
+            android:exported="true"
+            android:theme="@style/LogoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

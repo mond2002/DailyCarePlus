@@ -22,7 +22,7 @@ public class LogoActivity extends AppCompatActivity {
          @Override
          public void run()
              {
-                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                 Intent intent = new Intent(getApplicationContext(),DPassMainActivity.class);
 
              startActivity(intent);
 
