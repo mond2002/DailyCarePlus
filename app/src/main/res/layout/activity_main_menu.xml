@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuActivity"
+    android:background="@color/whiteBackground">
+
+    <RelativeLayout
+        android:id="@+id/logoSpace"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+        <View
+            android:layout_width="81dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/dpass_logo02"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000.000.000.0"
+            android:gravity="end"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/btQCcode"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/logoSpace"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/blackButton"
+        android:background="@drawable/shaper"
+        android:elevation="6dp" />
+
+    <View
+        android:id="@+id/btSetup"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/btQCcode"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/blackButton"
+        android:background="@drawable/shaper"
+        android:elevation="6dp" />
+
+    <View
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/logoSpace"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toLeftOf="@id/btQCcode"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="34dp"
+        android:textStyle="bold"
+        android:text="이소윤"
+        android:layout_alignStart="@id/status"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="14dp"
+        android:layout_alignTop="@id/status"
+        android:elevation="6dp"
+        />
+
+    <View
+        android:id="@+id/dpassStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/status"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toLeftOf="@id/btSetup"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <View
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_below="@id/dpassStatus"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <View
+        android:id="@+id/impaction"
+        android:layout_width="106dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/temp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <View
+        android:id="@+id/locationInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/temp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_toEndOf="@id/impaction"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <View
+        android:id="@+id/locationInfo01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationInfo"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shaper"
+        android:elevation="6dp"
+        android:minWidth="240dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@id/locationInfo01"
+        android:layout_alignStart="@id/locationInfo01"
+        android:elevation="6dp"
+        />
+
+
+</RelativeLayout>
