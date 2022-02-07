@@ -39,7 +39,8 @@
             android:text="카카오 로그인"
             android:textColor="#181600"
             android:textSize="13dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="TestMove"/>
 
         <View
             android:layout_width="15dp"
