@@ -34,24 +34,70 @@
         android:id="@+id/btQCcode"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentRight="true"
         android:layout_below="@id/logoSpace"
+        android:layout_alignParentRight="true"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/blackButton"
         android:background="@drawable/shaper"
+        android:backgroundTint="@color/blackButton"
         android:elevation="6dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/btQCcode"
+        android:layout_alignTop="@id/btQCcode"
+        android:layout_alignEnd="@id/btQCcode"
+        android:layout_alignBottom="@id/btQCcode"
+        android:elevation="6dp">
+
+        <View
+            android:id="@+id/qrIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/qricon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/qrIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="QR코드 체크인"
+            android:textColor="#fff"
+            android:textSize="11dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
 
     <View
         android:id="@+id/btSetup"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
         android:layout_below="@id/btQCcode"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/blackButton"
         android:background="@drawable/shaper"
+        android:backgroundTint="@color/blackButton"
         android:elevation="6dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btSetup"
+        android:layout_alignBottom="@id/btSetup"
+        android:layout_alignStart="@id/btSetup"
+        android:layout_alignEnd="@id/btSetup"
+        android:elevation="6dp">
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/settingIcon"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
 
     <View
         android:id="@+id/status"
@@ -133,7 +179,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/infotop">
+                android:layout_below="@id/infotop"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:id="@+id/vaccineDay"
@@ -238,6 +285,7 @@
         android:elevation="6dp">
 
         <View
+            android:id="@+id/tempLedInfo"
             android:layout_width="6dp"
             android:layout_height="61dp"
             android:layout_alignParentRight="true"
@@ -283,6 +331,61 @@
         android:background="@drawable/shaper"
         android:elevation="6dp"
         android:minWidth="240dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/impaction"
+        android:layout_alignTop="@id/impaction"
+        android:layout_alignEnd="@id/impaction"
+        android:layout_alignBottom="@id/impaction"
+        android:elevation="6dp">
+
+        <TextView
+            android:id="@+id/impeTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="일일 확진자"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/impeTitel"
+            android:layout_centerHorizontal="true"
+            android:textColor="#4D4D4D"
+            android:text="0000명" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/locationInfo"
+        android:layout_alignTop="@id/locationInfo"
+        android:layout_alignEnd="@id/locationInfo"
+        android:layout_alignBottom="@id/locationInfo"
+        android:elevation="7dp">
+
+        <TextView
+            android:id="@+id/locaTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="최근 방문 장소"
+            android:textSize="13dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/locaTitel"
+            android:textColor="#4D4D4D"
+            android:text="null"/>
+    </RelativeLayout>
+
 
     <View
         android:id="@+id/locationInfo"

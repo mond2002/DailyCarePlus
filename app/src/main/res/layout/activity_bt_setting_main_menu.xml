@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".btSettingMainMenu">
+
+    <RelativeLayout
+        android:id="@+id/topLogo"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <View
+            android:layout_width="137dp"
+            android:layout_height="41dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/dpass_logo02"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="313dp"
+        android:layout_height="494dp"
+        android:layout_below="@id/topLogo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dpassRnader" />
+
+    <View
+        android:id="@+id/btConStart"
+        android:layout_width="271dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shaper"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/blackButton"
+        android:layout_marginBottom="50dp"
+        android:elevation="6dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btConStart"
+        android:layout_alignTop="@+id/btConStart"
+        android:layout_alignEnd="@+id/btConStart"
+        android:layout_alignBottom="@+id/btConStart"
+        android:elevation="6dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="D-Pass 연결 시작"
+            android:textColor="#fff"
+            android:textSize="10dp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

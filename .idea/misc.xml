@@ -7,17 +7,18 @@
         <entry key="..\:/DailyCarePlus/DailyCarePlus/app/src/main/res/layout/activity_test.xml" value="0.5354166666666667" />
         <entry key="app/src/main/res/drawable/shadow.xml" value="0.30394736842105263" />
         <entry key="app/src/main/res/drawable/shaper.xml" value="0.34487179487179487" />
+        <entry key="app/src/main/res/layout/activity_bt_setting_main_menu.xml" value="0.2066111336952807" />
         <entry key="app/src/main/res/layout/activity_dpass_main.xml" value="0.25285334936374265" />
         <entry key="app/src/main/res/layout/activity_logo.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26927083333333335" />
-        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.2030993210041605" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.347793130359571" />
         <entry key="app/src/main/res/layout/activity_main_menu_acitivty.xml" value="0.29375" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.40225225225225225" />
         <entry key="app/src/main/res/layout/round_button.xml" value="0.41506618746374846" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
