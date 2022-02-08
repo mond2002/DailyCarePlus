@@ -51,9 +51,13 @@ class MainMenuActivity : AppCompatActivity() {
 
         //체온 부분-----------------------------------------------------------------------------------
         //usetTemp = 실시간 온도 정보
+        /*
         tempText.text = usetTemp
 
+         */
+
         //온도 lED 인디케이터 색상 변화
+        /*
         if(userTemp=<30.0) {
             tempLedInfo.setBackgroundColor(getColor(R.color.IndicatorG))
         }else if(userTemp=<37.0){
@@ -61,6 +65,8 @@ class MainMenuActivity : AppCompatActivity() {
         }else if(userTemp=<37.5){
             tempLedInfo.setBackgroundColor(getColor(R.color.IndicatorR))
         }
+
+         */
 
 
 

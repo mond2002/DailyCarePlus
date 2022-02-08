@@ -96,7 +96,6 @@
         <View
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:background="@drawable/settingIcon"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 

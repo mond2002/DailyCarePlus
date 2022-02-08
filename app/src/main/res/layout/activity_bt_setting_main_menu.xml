@@ -25,8 +25,7 @@
         android:layout_width="313dp"
         android:layout_height="494dp"
         android:layout_below="@id/topLogo"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/dpassRnader" />
+        android:layout_centerHorizontal="true" />
 
     <View
         android:id="@+id/btConStart"

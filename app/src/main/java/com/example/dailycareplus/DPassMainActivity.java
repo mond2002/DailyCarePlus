@@ -22,7 +22,7 @@ public class DPassMainActivity extends AppCompatActivity {
 
     public void TestMove(View view)
     {
-        Intent intent = new Intent(this,TestActivity.class);
+        Intent intent = new Intent(this,btSettingMainMenu.class);
         startActivity(intent);
     }
 }
