@@ -20,6 +20,7 @@
             android:background="@drawable/dpass_logo02" />
 
         <TextView
+            android:id="@+id/btAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -112,7 +113,7 @@
         android:minWidth="240dp" />
 
     <RelativeLayout
-        android:id="@+id/usetName"
+        android:id="@+id/Userinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/status"
@@ -121,6 +122,7 @@
         android:elevation="6dp">
 
         <TextView
+            android:id="@+id/UserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -135,7 +137,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_toEndOf="@id/usetName"
+        android:layout_toEndOf="@id/Userinfo"
         android:layout_alignEnd="@id/status"
         android:layout_alignBottom="@id/status"
         android:layout_alignTop="@id/status"
@@ -153,7 +155,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/vaccineInfo"
+                    android:id="@+id/vaccineInfoTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -164,9 +166,10 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/vaccineInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/vaccineInfo"
+                    android:layout_below="@id/vaccineInfoTitle"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="14dp"
                     android:elevation="6dp"
@@ -194,6 +197,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/vaccineDayInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/vaccineDay"
@@ -242,14 +246,15 @@
             android:textSize="15dp" />
 
         <TextView
-            android:layout_marginStart="55dp"
+            android:id="@+id/dpassInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/bttStet"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="55dp"
             android:layout_marginEnd="13dp"
+            android:layout_toStartOf="@id/bttStet"
             android:text="연결됨"
-            android:textSize="10dp"
-            android:layout_centerVertical="true"/>
+            android:textSize="10dp" />
 
         <View
             android:id="@+id/bttStet"
@@ -309,17 +314,18 @@
         android:textColor="#4D4D4D"/>
 
     <TextView
+        android:id="@+id/tempText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/temp"
         android:layout_alignStart="@id/temp"
-        android:layout_marginTop="30dp"
+        android:layout_alignTop="@id/temp"
         android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
+        android:elevation="6dp"
         android:text="35.7℃"
-        android:textStyle="bold"
-        android:textSize="91dp"
         android:textColor="#4D4D4D"
-        android:elevation="6dp"/>
+        android:textSize="91dp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/impaction"
@@ -342,7 +348,7 @@
         android:elevation="6dp">
 
         <TextView
-            android:id="@+id/impeTitel"
+            android:id="@+id/impeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -351,12 +357,13 @@
             android:textSize="13dp" />
 
         <TextView
+            android:id="@+id/impeInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/impeTitel"
+            android:layout_below="@+id/impeTitle"
             android:layout_centerHorizontal="true"
-            android:textColor="#4D4D4D"
-            android:text="0000명" />
+            android:text="0000명"
+            android:textColor="#4D4D4D" />
 
     </RelativeLayout>
 
@@ -377,13 +384,15 @@
             android:layout_marginTop="8dp"
             android:text="최근 방문 장소"
             android:textSize="13dp"/>
+
         <TextView
+            android:id="@+id/locaInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/locaTitel"
-            android:textColor="#4D4D4D"
-            android:text="null"/>
+            android:layout_centerHorizontal="true"
+            android:text="null"
+            android:textColor="#4D4D4D" />
     </RelativeLayout>
 
 
