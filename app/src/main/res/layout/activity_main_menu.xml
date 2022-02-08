@@ -45,12 +45,12 @@
         android:id="@+id/btSetup"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_alignParentRight="true"
         android:layout_below="@id/btQCcode"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/blackButton"
         android:background="@drawable/shaper"
+        android:backgroundTint="@color/blackButton"
         android:elevation="6dp" />
 
     <View
@@ -261,17 +261,18 @@
         android:textColor="#4D4D4D"/>
 
     <TextView
+        android:id="@+id/nowtemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/temp"
         android:layout_alignStart="@id/temp"
-        android:layout_marginTop="30dp"
+        android:layout_alignTop="@id/temp"
         android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
+        android:elevation="6dp"
         android:text="35.7℃"
-        android:textStyle="bold"
-        android:textSize="91dp"
         android:textColor="#4D4D4D"
-        android:elevation="6dp"/>
+        android:textSize="91dp"
+        android:textStyle="bold" />
 
     <View
         android:id="@+id/impaction"
