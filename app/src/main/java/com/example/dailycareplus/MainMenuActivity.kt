@@ -1,16 +1,21 @@
 package com.example.dailycareplus
 
+import android.content.Intent
 import android.graphics.Color.TRANSPARENT
 import android.graphics.Color.parseColor
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import org.w3c.dom.Text
+import java.util.*
 
 class MainMenuActivity : AppCompatActivity() {
 
@@ -33,6 +38,8 @@ class MainMenuActivity : AppCompatActivity() {
     // 체온 인디케이터
     lateinit var tempLedInfo : View
 
+    var userTemp : String = "36.5"
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,19 +57,16 @@ class MainMenuActivity : AppCompatActivity() {
         tempLedInfo = findViewById(R.id.tempLedInfo)
 
         //체온 부분-----------------------------------------------------------------------------------
-        //usetTemp = 실시간 온도 정보
-        /*
-        tempText.text = usetTemp
 
-         */
 
         //온도 lED 인디케이터 색상 변화
         /*
-        if(userTemp=<30.0) {
+        var tempint : Int = userTemp.toInt()
+        if(tempint<30.0) {
             tempLedInfo.setBackgroundColor(getColor(R.color.IndicatorG))
-        }else if(userTemp=<37.0){
+        }else if(tempint<37.0){
             tempLedInfo.setBackgroundColor(getColor(R.color.IndicatorO))
-        }else if(userTemp=<37.5){
+        }else if(tempint<37.5){
             tempLedInfo.setBackgroundColor(getColor(R.color.IndicatorR))
         }
 
@@ -70,5 +74,49 @@ class MainMenuActivity : AppCompatActivity() {
 
 
 
+
+
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        onResume()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+
+        tempText.text = temp+"°"+"C"
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            getextra()
+        }, 500)
+
+        /*
+        if (temp != null) {
+            Toast.makeText(this, temp, Toast.LENGTH_SHORT).show()
+     }
+
+         */
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        onResume()
+    }
+
+    fun getextra()
+    {
+        intent = Intent(this,DeviceControlActivity::class.java)
+        val temp=intent.getStringExtra("temp")
+
+        userTemp=temp.toString()
+
+        onResume()
+    }
+
+
 }

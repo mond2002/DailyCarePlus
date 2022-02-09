@@ -8,11 +8,18 @@ import android.os.Looper
 import android.os.Message
 import android.util.Log
 import android.widget.Toast
+import com.example.dailycareplus.btdata.Companion.findResponseCharacteristic
+import java.util.*
 
 
 private val TAG = "gattClienCallback"
+var temp : String = ""
+var temperture : Boolean = false
+val temp_value : String = ""
 
 class DeviceControlActivity(private val context: Context?, private var bluetoothGatt: BluetoothGatt?) {
+    private var bleGatt:BluetoothGatt? = null
+
     private var device : BluetoothDevice? = null
     private val gattCallback : BluetoothGattCallback = object : BluetoothGattCallback(){
         override fun onConnectionStateChange(gatt: BluetoothGatt?, status: Int, newState: Int) {
@@ -28,8 +35,9 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
                     disconnectGattServer()
                 }
             }
-
         }
+
+
         override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
             super.onServicesDiscovered(gatt, status)
             when (status) {
@@ -37,11 +45,28 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
                     Log.i(TAG, "Connected to GATT_SUCCESS.")
                     broadcastUpdate("Connected "+ device?.name)
                 }
+
                 else -> {
                     Log.w(TAG, "Device service discovery failed, status: $status")
                     broadcastUpdate("Fail Connect "+device?.name)
                 }
             }
+            val respCharacteristic = gatt?.let { findResponseCharacteristic(it) }
+
+            if( respCharacteristic == null ) {
+                Log.e(TAG, "Unable to find cmd characteristic")
+                disconnectGattServer()
+                return
+            }
+
+            gatt.setCharacteristicNotification(respCharacteristic, true)
+
+            val descriptor:BluetoothGattDescriptor = respCharacteristic.getDescriptor(
+                UUID.fromString(CLIENT_CHARACTERISTIC_CONFIG)
+            )
+            descriptor.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
+            gatt.writeDescriptor(descriptor)
+
         }
         private fun broadcastUpdate(str: String) {
             val mHandler : Handler = object : Handler(Looper.getMainLooper()){
@@ -67,7 +92,9 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
             characteristic: BluetoothGattCharacteristic?
         ) {
             super.onCharacteristicChanged(gatt, characteristic)
-            readCharacteristic(characteristic)
+            if (characteristic != null) {
+                readCharacteristic(characteristic)
+            }
         }
 
         override fun onCharacteristicWrite(
@@ -105,10 +132,15 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
         private fun readCharacteristic(characteristic: BluetoothGattCharacteristic) {
 
             val msg = characteristic.getStringValue(0)
-            _txtRead = msg
-            txtRead.set(_txtRead)
+            temp = msg
+            temperture = true
             Log.d(TAG, "read: $msg")
+
+            val intent = Intent(context,MainMenuActivity::class.java)
+            intent.putExtra("temp", msg)
+
         }
+
     }
 
     fun connectGatt(device:BluetoothDevice):BluetoothGatt?{
@@ -123,5 +155,13 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
         }
         return bluetoothGatt
     }
+    fun disconnectGattServer()
+    {
+        Log.d(TAG,"Closing Gatt connection")
 
+        if(bleGatt != null)
+        {
+            bleGatt!!.close()
+        }
+    }
 }
