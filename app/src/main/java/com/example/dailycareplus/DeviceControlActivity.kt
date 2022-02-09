@@ -1,9 +1,6 @@
 package com.example.dailycareplus
 
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothGatt
-import android.bluetooth.BluetoothGattCallback
-import android.bluetooth.BluetoothProfile
+import android.bluetooth.*
 import android.content.*
 import android.os.Build
 import android.os.Handler
@@ -64,6 +61,54 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
                 bluetoothGatt = null
             }
         }
+
+        override fun onCharacteristicChanged(
+            gatt: BluetoothGatt?,
+            characteristic: BluetoothGattCharacteristic?
+        ) {
+            super.onCharacteristicChanged(gatt, characteristic)
+            readCharacteristic(characteristic)
+        }
+
+        override fun onCharacteristicWrite(
+            gatt: BluetoothGatt?,
+            characteristic: BluetoothGattCharacteristic?,
+            status: Int
+        ) {
+            super.onCharacteristicWrite(gatt, characteristic, status)
+            if(status == BluetoothGatt.GATT_SUCCESS)
+            {
+                Log.d(TAG,"Characteristic written successfully")
+            }
+            else
+            {
+                Log.e(TAG,"Characteristic write unsuccessful,status:$status")
+                disconnectGattServer()
+            }
+        }
+        override fun onCharacteristicRead(
+            gatt: BluetoothGatt?,
+            characteristic: BluetoothGattCharacteristic,
+            status: Int
+        ) {
+            super.onCharacteristicRead(gatt, characteristic, status)
+            if (status == BluetoothGatt.GATT_SUCCESS) {
+                Log.d(TAG, "Characteristic read successfully")
+                readCharacteristic(characteristic)
+            } else {
+                Log.e(TAG, "Characteristic read unsuccessful, status: $status")
+                // Trying to read from the Time Characteristic? It doesnt have the property or permissions
+                // set to allow this. Normally this would be an error and you would want to:
+                // disconnectGattServer();
+            }
+        }
+        private fun readCharacteristic(characteristic: BluetoothGattCharacteristic) {
+
+            val msg = characteristic.getStringValue(0)
+            _txtRead = msg
+            txtRead.set(_txtRead)
+            Log.d(TAG, "read: $msg")
+        }
     }
 
     fun connectGatt(device:BluetoothDevice):BluetoothGatt?{
@@ -78,4 +123,5 @@ class DeviceControlActivity(private val context: Context?, private var bluetooth
         }
         return bluetoothGatt
     }
+
 }
