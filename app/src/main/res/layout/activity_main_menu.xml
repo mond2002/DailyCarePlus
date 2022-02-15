@@ -85,18 +85,20 @@
         android:elevation="6dp" />
 
     <RelativeLayout
+        android:id="@+id/btSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/btSetup"
-        android:layout_alignBottom="@id/btSetup"
         android:layout_alignStart="@id/btSetup"
+        android:layout_alignTop="@id/btSetup"
         android:layout_alignEnd="@id/btSetup"
+        android:layout_alignBottom="@id/btSetup"
         android:elevation="6dp">
 
         <View
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:background="@drawable/settingsfill" />
     </RelativeLayout>
 
     <View

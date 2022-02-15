@@ -10,9 +10,12 @@
         <entry key="..\:/Metro_Villain/DailyCarePlus/app/src/main/res/layout/activity_main_menu.xml" value="0.152" />
         <entry key="..\:/Metro_Villain/DailyCarePlus/app/src/main/res/layout/recyclerview_item.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shaper.xml" value="0.34487179487179487" />
+        <entry key="app/src/main/res/layout/activity_bt_setting_main_menu.xml" value="0.21243169398907105" />
         <entry key="app/src/main/res/layout/activity_dpass_main.xml" value="0.25285334936374265" />
         <entry key="app/src/main/res/layout/activity_logo.xml" value="0.26927083333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26927083333333335" />
+        <entry key="app/src/main/res/layout/activity_main_menu.xml" value="0.41043171091487085" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.29375" />
         <entry key="app/src/main/res/layout/round_button.xml" value="0.41506618746374846" />
       </map>
     </option>

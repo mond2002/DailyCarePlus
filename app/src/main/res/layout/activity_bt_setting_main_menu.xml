@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/topLogo"
         android:layout_centerHorizontal="true"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical" />
 
     <View
         android:id="@+id/btConStart"

@@ -38,6 +38,8 @@ class MainMenuActivity : AppCompatActivity() {
     // 체온 인디케이터
     lateinit var tempLedInfo : View
 
+    lateinit var btSetting : Button
+
     var userTemp : String = "36.5"
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -73,8 +75,10 @@ class MainMenuActivity : AppCompatActivity() {
          */
 
 
-
-
+        btSetting.setOnClickListener{
+            intent = Intent (this,SettingActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
